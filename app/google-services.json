@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015064872544",
+    "project_id": "orfografiya-oyini",
+    "storage_bucket": "orfografiya-oyini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015064872544:android:da6557813ae23ccdbce505",
+        "android_client_info": {
+          "package_name": "uz.gita.spellingtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015064872544-c9jcs13lkjonubijmo5ifbnh93prq0ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKdPAAc31CcALLMQRjCT9OutcLC06lc1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015064872544-c9jcs13lkjonubijmo5ifbnh93prq0ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

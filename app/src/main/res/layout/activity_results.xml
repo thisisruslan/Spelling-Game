@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:paddingBottom="16dp"
+    tools:context=".ui.activities.ResultsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/myDarkPurple">
+
+            <TextView
+                android:id="@+id/title_action_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Nátiyje"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.yangp.ypwaveview.YPWaveView
+        android:id="@+id/progressWave"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        app:animatorEnable="true"
+        app:behideColor="#7C4DFF"
+        app:borderColor="@color/myDarkPurple"
+        app:borderWidthSize="6dp"
+        app:frontColor="@color/myDarkPurple"
+        app:layout_constraintBottom_toTopOf="@id/tv_result"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:max="100"
+        app:progress="0"
+        app:shapePadding="0dp"
+        app:shapeType="circle"
+        app:strong="100"
+        app:textColor="@color/white"
+        app:textHidden="false" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="8dp"
+        android:elevation="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/correctsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Corrects: 6"
+                android:fontFamily="monospace"
+                android:textColor="@color/green"
+                android:textSize="22sp"
+                android:textStyle="bold"  />
+
+            <TextView
+                android:id="@+id/mistakesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                tools:text="Wrongs: 4"
+                android:textColor="@color/red"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/notSelectedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="NotSelected: 4"
+                android:fontFamily="monospace"
+                android:textColor="@color/myDark"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backMenuBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_dialog"
+        android:padding="16dp"
+        android:text="MENYUǴA QAYTÍW"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

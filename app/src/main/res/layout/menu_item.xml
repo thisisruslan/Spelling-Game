@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="16dp"
+    android:elevation="12dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_menu_item">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_lock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/back_btn_bg"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_lock_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_stage_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="1-Basqısh"
+            android:fontFamily="monospace"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/img_lock"
+            app:layout_constraintTop_toTopOf="@id/img_lock" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressView"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_lock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_lock"
+            app:progressView_colorBackground="@color/white"
+            app:progressView_colorProgress="#18A05E"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_autoAnimate="false"
+            app:progressView_borderWidth="1dp"
+            app:progressView_labelText="0%"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="0"
+            app:progressView_progress="0"
+            app:progressView_progressFromPrevious="true"
+            app:progressView_radius="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

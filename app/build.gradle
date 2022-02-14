@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "uz.gita.spellingtest"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 9
+        versionName "1.2.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            shrinkResources true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.google.firebase:firebase-firestore:24.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    //in-app update
+    implementation 'com.google.android.play:core:1.10.3'
+
+
+
+    // progress bar
+    implementation 'com.white:progressview:1.0.1'
+
+    implementation 'com.yangping:ypwaveview:1.0.3'
+
+    //progress bar
+    implementation "com.github.skydoves:progressview:1.1.2"
+
+    /**
+     * pdf reader
+     */
+    implementation "com.dmitryborodin:pdfview-android:1.1.0"
+
+
+    //loading animation
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+}

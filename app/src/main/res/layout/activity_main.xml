@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_stage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="1 - Basqısh"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_question_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="monospace"
+        android:padding="8dp"
+        android:textColor="@color/lightYellow"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_stage"
+        tools:text="1/10" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_help_50"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_help_50"
+        android:padding="8dp"
+        android:src="@drawable/help_50"
+        app:layout_constraintBottom_toBottomOf="@id/img_people_help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_people_help" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_help_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintStart_toStartOf="@id/img_help_50"
+        app:layout_constraintTop_toTopOf="@id/img_help_50" />
+
+    <TextView
+        android:id="@+id/help_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="3"
+        android:textColor="@color/myDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/img_help_count"
+        app:layout_constraintEnd_toEndOf="@id/img_help_count"
+        app:layout_constraintStart_toStartOf="@id/img_help_count"
+        app:layout_constraintTop_toTopOf="@id/img_help_count" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bg_gray_help50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_gray_help50"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/img_help_50"
+        app:layout_constraintEnd_toEndOf="@id/img_help_50"
+        app:layout_constraintStart_toStartOf="@id/img_help_50"
+        app:layout_constraintTop_toTopOf="@id/img_help_50" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_people_help"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_people_help"
+        android:padding="8dp"
+        android:src="@drawable/ic_group_svgrepo_com"
+        app:layout_constraintBottom_toTopOf="@id/questionText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_stage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/layout_variants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_help_50"
+        tools:text="Durıs jazılǵan sózdi tabıń" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_variants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_skip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/variant1"
+            style="@style/question_flag_variants_bg"
+            tools:text="Nókıs" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/variant2"
+            style="@style/question_flag_variants_bg"
+            tools:text="Nókis" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/variant3"
+            style="@style/question_flag_variants_bg"
+            tools:text="Nukus" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/variant4"
+            style="@style/question_flag_variants_bg"
+            tools:text="Nukis" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_btn_dialog"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keyingisi"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

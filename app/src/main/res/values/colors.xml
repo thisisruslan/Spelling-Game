@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#E040FB</color>
+    <color name="purple_500">#853E1B81</color>
+    <color name="purple_700">#853E1B81</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFCD40</color>
+    <color name="lightYellow">#FFD661</color>
+    <color name="red">#FF5454</color>
+    <color name="lightRed">#FF7C7C</color>
+    <color name="green">#29C87B</color>
+    <color name="myDark">#2B2B2B</color>
+    <color name="myLightPurple">#B8A3E1</color>
+    <color name="myDarkPurple">#3B2857</color>
+    <color name="snackbar_action_text_color">#3A2CD1</color>
+</resources>

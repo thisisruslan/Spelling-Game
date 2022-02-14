@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myDarkPurple"
+    tools:context=".ui.activities.StartActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/arbutus"
+        android:gravity="center"
+        android:text="ORFOGRAFIYALÍQ  OYÍN"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/flag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/bg_start_btn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/alphabet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arbutus"
+            android:text="Baslaw"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:src="@drawable/ic_baseline_skip_next_24" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/alphabet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_share"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_spellcheck_24" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:gravity="center"
+        android:text="Tiykarǵı\nqaǵıydalar"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/alphabet"
+        app:layout_constraintStart_toStartOf="@id/alphabet"
+        app:layout_constraintTop_toBottomOf="@id/alphabet" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        app:cardCornerRadius="16dp"
+        android:visibility="visible"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_rate"
+        app:layout_constraintStart_toEndOf="@id/alphabet">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            android:clickable="false"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_share_52" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Bólisiw"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/img_share"
+        app:layout_constraintStart_toStartOf="@id/img_share"
+        app:layout_constraintTop_toBottomOf="@id/img_share" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_rate"
+        android:visibility="visible"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_share"
+        app:layout_constraintEnd_toStartOf="@id/img_info"
+        app:layout_constraintStart_toEndOf="@id/img_share">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:clickable="false"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_star_rate_24" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Bahalaw"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/img_rate"
+        app:layout_constraintStart_toStartOf="@id/img_rate"
+        app:layout_constraintTop_toBottomOf="@id/img_rate" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/alphabet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_rate">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ACACAC"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_info_24" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Haqqında"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/img_info"
+        app:layout_constraintStart_toStartOf="@id/img_info"
+        app:layout_constraintTop_toBottomOf="@id/img_info" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
