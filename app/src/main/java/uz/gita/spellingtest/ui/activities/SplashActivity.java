@@ -3,7 +3,6 @@ package uz.gita.spellingtest.ui.activities;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +18,8 @@ import uz.gita.spellingtest.repository.MainRepository;
 
 public class SplashActivity extends AppCompatActivity implements FlagContract.ViewSplash {
     private FlagContract.PresenterSplash presenter;
-    private boolean isActivityExists;
     ProgressBar progressBar;
+    Sprite wave = new Wave();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,39 +30,27 @@ public class SplashActivity extends AppCompatActivity implements FlagContract.Vi
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
         }
 
-        presenter = new SplashPresenter(this, new MainRepository(this));
         progressBar = findViewById(R.id.spin_kit);
-        Sprite wave = new Wave();
         progressBar.setIndeterminateDrawable(wave);
-
+        presenter = new SplashPresenter(this, new MainRepository(this));
     }
 
     @Override
     public void launchNextScreen() {
-        if (isActivityExists) {
-            Intent intent = new Intent(this, StartActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        isActivityExists = true;
         presenter.getDataFromFirebase();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        isActivityExists = false;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        isActivityExists = false;
         presenter.onDestroy();
     }
 

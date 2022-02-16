@@ -35,7 +35,6 @@ public class MainRepository implements FlagContract.Model {
 
         db.collection("QuizList").orderBy("id", Query.Direction.ASCENDING).get().addOnCompleteListener(task -> {
             if (!quizList.isEmpty()) quizList.clear();
-            String $4 ="asd";
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     quizList.add(document.toObject(QuestionData.class));
