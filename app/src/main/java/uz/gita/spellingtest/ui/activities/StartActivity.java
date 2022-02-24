@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Keep;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -18,10 +17,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.InstallState;
-import com.google.android.play.core.install.InstallStateUpdatedListener;
 import com.google.android.play.core.install.model.AppUpdateType;
-import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 
 import uz.gita.spellingtest.R;
@@ -72,11 +68,19 @@ public class StartActivity extends AppCompatActivity {
             try {
                 startActivity(myAppLinkToMarket);
             } catch (ActivityNotFoundException e) {
-                Toast.makeText(this, "Play markette bul baǵdarlama tawılmadı!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Play markette bul qosımsha tabılmadı!", Toast.LENGTH_LONG).show();
             }
         });
 
-        findViewById(R.id.img_share).setOnClickListener(v -> {
+        findViewById(R.id.img_create_test).setOnClickListener(v -> {
+            Intent intent = new Intent(App.instance, CreateTestActivity.class);
+            startActivity(intent);
+        });
+
+    }
+
+    /* share function
+     findViewById(R.id.img_create_test).setOnClickListener(v -> {
             Intent intent = new Intent((Intent.ACTION_SEND));
             intent.setType("text/plain");
             String text = "Qaraqalpaq tilinde qátesiz jazıwdı úyrenemiz.\n\n-> "
@@ -84,21 +88,7 @@ public class StartActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, text);
             startActivity(Intent.createChooser(intent, "Bólisiw:"));
         });
-
-//        mAppUpdateManager.registerListener(installStateUpdatedListener);
-    }
-
-/*
-    private InstallStateUpdatedListener installStateUpdatedListener = new InstallStateUpdatedListener() {
-        @Override
-        public void onStateUpdate(@NonNull InstallState installState) {
-            if (installState.installStatus() == InstallStatus.DOWNLOADED)      {
-                showCompletedUpdate();
-            }
-        }
-    };
-*/
-
+     */
 
     private void showCompletedUpdate() {
         Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Mobil qosımsha jańalanıwǵa tayyar!", Snackbar.LENGTH_INDEFINITE);

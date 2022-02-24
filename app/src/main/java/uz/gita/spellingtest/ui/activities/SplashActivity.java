@@ -3,6 +3,7 @@ package uz.gita.spellingtest.ui.activities;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +33,12 @@ public class SplashActivity extends AppCompatActivity implements FlagContract.Vi
 
         progressBar = findViewById(R.id.spin_kit);
         progressBar.setIndeterminateDrawable(wave);
-        presenter = new SplashPresenter(this, new MainRepository(this));
+        presenter = new SplashPresenter(this, new MainRepository());
     }
 
     @Override
     public void launchNextScreen() {
+        progressBar.setVisibility(View.INVISIBLE);
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
         finish();
@@ -50,8 +52,8 @@ public class SplashActivity extends AppCompatActivity implements FlagContract.Vi
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         presenter.onDestroy();
+        super.onDestroy();
     }
 
 }

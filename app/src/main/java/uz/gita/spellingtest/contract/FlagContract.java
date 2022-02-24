@@ -8,31 +8,32 @@ import uz.gita.spellingtest.data.QuestionData;
 public interface FlagContract {
 
     interface Model {
-        void getDataFromFirebase(FlagContract.Model.FinishListener finishListener);
+        void getDataFromFirebase(ReadDataFinishListener readDataFinishListener);
+        void cancelGetDataRequest();
 
-        interface FinishListener {
+        void submitTest(QuestionData questionData, WriteDataFinishListener writeDataFinishListener);
+
+        interface ReadDataFinishListener {
             void getDataFinishedListener();
         }
 
+        interface WriteDataFinishListener {
+            void submitTestFinishedListener();
+        }
+
+        //Main repository
         void splitLevelQuestions(int startIndex);
-
         int getQuizSize();
-
         int getStageResult(String key);
-
         void saveStageResult(String levelTitle, int correctCount);
-
         void clearResults();
-
         QuestionData getQuizByID(int id);
-
     }
 
 
-    //MainActvity
+    //MainActivity
     interface PresenterMain {
         void checkVariant(int id, int index);
-
 
         void loadQuestions();
 
@@ -42,7 +43,6 @@ public interface FlagContract {
 
         int getCorrectAnswerIndex();
     }
-
     interface ViewMain {
         void setQuestionText(QuestionData data);
 
@@ -57,12 +57,22 @@ public interface FlagContract {
     //SplashActivity
     interface PresenterSplash {
         void getDataFromFirebase();
-
         void onDestroy();
     }
 
     interface ViewSplash {
         void launchNextScreen();
+    }
+
+
+    //CreateTestActivity
+    interface PresenterCreateTest {
+        void submitTest(QuestionData questionData);
+        void onDestroy();
+    }
+
+    interface ViewCreateTest {
+        void submitTestFinish();
     }
 
     //MenuActivity
@@ -74,6 +84,7 @@ public interface FlagContract {
         int getStageResult(String key);
 
         void clearResults();
+
     }
 
 

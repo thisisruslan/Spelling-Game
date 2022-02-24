@@ -39,7 +39,7 @@ public class InfoActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.telegram_tv).setOnClickListener(v->{
-            Uri uri = Uri.parse("http://t.me/ruslan_jumatov");
+            Uri uri = Uri.parse("http://t.me/jumatovrm");
             Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
             likeIng.setPackage("com.telegram.android");
@@ -48,7 +48,7 @@ public class InfoActivity extends AppCompatActivity {
                 startActivity(likeIng);
             } catch (ActivityNotFoundException e) {
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://t.me/ruslan_jumatov")));
+                        Uri.parse("http://t.me/jumatovrm")));
             }
         });
 

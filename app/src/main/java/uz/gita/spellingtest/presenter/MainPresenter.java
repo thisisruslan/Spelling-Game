@@ -1,7 +1,6 @@
 package uz.gita.spellingtest.presenter;
 
 import androidx.annotation.Keep;
-
 import uz.gita.spellingtest.contract.FlagContract;
 import uz.gita.spellingtest.data.QuestionData;
 
@@ -9,8 +8,8 @@ import uz.gita.spellingtest.data.QuestionData;
 public class MainPresenter implements FlagContract.PresenterMain {
     FlagContract.ViewMain viewMain;
     FlagContract.Model model;
-    private int wrongCount;
-    private int correctCount;
+    private int wrongCount = 0;
+    private int correctCount = 0;
     private int currentQuestion = 0;
     private int correctAnswerIndex;
     private QuestionData quiz;

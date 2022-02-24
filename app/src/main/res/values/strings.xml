@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Orfografiyalıq oyın</string>
-    <string name="ruslan_jumatov"><u>ruslan_jumatov</u></string>
+    <string name="email_link">jumatovrm@gmail.com</string>
+    <string name="telegram_link"><u>jumatovrm</u></string>
+    <string name="instagram_link"><u>ruslan_jumatov</u></string>
+    <string name="question">Durıs jazılǵan sózdi tabıń</string>
+    <string name="info_congratulations">Qutlıqlaymız! Siz barlıq basqıshlardan óttińiz. Baǵdarlamaniń keyingi versiyasında jańadan dizayn, taza sózler hám de basqa da imkaniyatlar qosiladı. Sonlıqtan da biz benen qalıń.</string>
+    <string name="info_create_test">Test dúzgenińiz ushın raxmet. Testińiz tekseriwge jiberildi hám jaqın arada kórip shıǵıladı.</string>
+    <string name="open_level_info">Bul basqıshqa ótiw ushın, bunnan aldınǵı basqıshtaǵı nátijeńiz 90% dan kem bolmawı kerek!</string>
+    <string name="create_test_rules">   Tiykarǵı qaǵıydalar :\n- Qaraqalpaqsha sózler bolıwı\n- Latın álipbesinen paydalanıw\n- Barlıq variantlardı tolıq kiritiw\n- Durıs varianttı belgilew\n- Internet qosılǵan bolıwı\n- Adamlar kóp isletetuǵın biraq qa`te isletetuǵın sóz bolıwı</string>
 </resources>

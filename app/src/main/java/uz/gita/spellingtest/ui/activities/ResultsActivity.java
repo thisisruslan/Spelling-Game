@@ -14,7 +14,7 @@ import uz.gita.spellingtest.R;
 
 @Keep
 public class ResultsActivity extends AppCompatActivity {
-    private int corrects;
+    private int corrects = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class ResultsActivity extends AppCompatActivity {
         TextView mistakesText = findViewById(R.id.mistakesText);
         TextView notSelectedText = findViewById(R.id.notSelectedText);
         TextView actionBarText = findViewById(R.id.title_action_bar);
+        YPWaveView progressWave = findViewById(R.id.progressWave);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -45,7 +46,6 @@ public class ResultsActivity extends AppCompatActivity {
 
         findViewById(R.id.backMenuBtn).setOnClickListener(v -> finish());
 
-        YPWaveView progressWave = findViewById(R.id.progressWave);
         progressWave.setProgress(10 * corrects);
     }
 

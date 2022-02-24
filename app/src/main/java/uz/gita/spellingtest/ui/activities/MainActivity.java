@@ -54,11 +54,10 @@ public class MainActivity extends AppCompatActivity implements FlagContract.View
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
         }
 
-
         loadViews();
         Bundle bundle = getIntent().getExtras();
         levelTitle = String.valueOf(bundle.getInt("level_title", 0));
-        presenter = new MainPresenter(this, new MainRepository(this));
+        presenter = new MainPresenter(this, new MainRepository());
         connectActions();
 
 

@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,14 +25,13 @@ import uz.gita.spellingtest.repository.MainRepository;
 import uz.gita.spellingtest.ui.ClickListener;
 import uz.gita.spellingtest.ui.UserActionDialogInterface;
 import uz.gita.spellingtest.ui.dialog.ClearDialog;
-import uz.gita.spellingtest.ui.dialog.FinishDialog;
-import uz.gita.spellingtest.ui.dialog.LockedDialog;
+import uz.gita.spellingtest.ui.dialog.InfoDialog;
 
 @Keep
 public class MenuActivity extends AppCompatActivity implements ClickListener {
     private FlagContract.PresenterMenu presenter;
     private ArrayList<MenuData> data = new ArrayList<>();
-    private LockedDialog lockedDialog;
+    private InfoDialog infoDialog;
     private MenuAdapter adapter;
     private int lastClickedItemIndex;
 
@@ -42,8 +40,8 @@ public class MenuActivity extends AppCompatActivity implements ClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        presenter = new MenuPresenter(new MainRepository(this));
-        lockedDialog = new LockedDialog(this);
+        presenter = new MenuPresenter(new MainRepository());
+        infoDialog = new InfoDialog(this);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
@@ -57,9 +55,10 @@ public class MenuActivity extends AppCompatActivity implements ClickListener {
         findViewById(R.id.btn_menu_back).setOnClickListener(v -> finish());
 
         if (presenter.getStageResultBool(String.valueOf(presenter.getQuizSize()))) {
-            FinishDialog finishDialog = new FinishDialog(this);
-            finishDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            finishDialog.show();
+            InfoDialog infoDialog = new InfoDialog(this);
+            infoDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            infoDialog.show();
+            infoDialog.setInfoText(R.string.info_congratulations);
         }
 
         findViewById(R.id.clear_results).setOnClickListener(v -> {
@@ -114,12 +113,10 @@ public class MenuActivity extends AppCompatActivity implements ClickListener {
 
     @Override
     public void showDialog() {
-        lockedDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        lockedDialog.show();
+        infoDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        infoDialog.show();
+        infoDialog.setInfoText(R.string.open_level_info);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
+
 }

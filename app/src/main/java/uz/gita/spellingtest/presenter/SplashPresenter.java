@@ -6,7 +6,7 @@ import androidx.annotation.Keep;
 import uz.gita.spellingtest.contract.FlagContract;
 
 @Keep
-public class SplashPresenter implements FlagContract.PresenterSplash, FlagContract.Model.FinishListener {
+public class SplashPresenter implements FlagContract.PresenterSplash, FlagContract.Model.ReadDataFinishListener {
     FlagContract.ViewSplash viewSplash;
     FlagContract.Model model;
 
@@ -18,7 +18,7 @@ public class SplashPresenter implements FlagContract.PresenterSplash, FlagContra
 
     @Override
     public void getDataFinishedListener() {
-        viewSplash.launchNextScreen();
+        if (viewSplash != null) viewSplash.launchNextScreen();
     }
 
     @Override

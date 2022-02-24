@@ -1,6 +1,5 @@
 package uz.gita.spellingtest.app;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -16,12 +15,12 @@ public class LocalStorage {
         preferences.edit().clear().apply();
     }
 
-    private LocalStorage(Context context) {
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+    private LocalStorage() {
+        preferences = PreferenceManager.getDefaultSharedPreferences(App.instance);
     }
 
-    public static LocalStorage getInstance(Context context) {
-        if (instance == null) return new LocalStorage(context);
+    public static LocalStorage getInstance() {
+        if (instance == null) return new LocalStorage();
         return instance;
     }
 

@@ -91,7 +91,7 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="8dp"
                 android:autoLink="email"
-                android:text="thisisruslan98@gmail.com"
+                android:text="@string/email_link"
                 android:textColor="@color/myDark"
                 android:textColorLink="@color/myDark"
                 android:textSize="18sp" />
@@ -118,7 +118,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:autoLink="all"
                 android:clickable="true"
-                android:text="@string/ruslan_jumatov"
+                android:text="@string/instagram_link"
                 android:textColor="@color/myDark"
                 android:textSize="18sp" />
 
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="8dp"
-                android:text="@string/ruslan_jumatov"
+                android:text="@string/telegram_link"
                 android:textColor="@color/myDark"
                 android:textSize="18sp" />
 

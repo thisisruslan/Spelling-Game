@@ -9,6 +9,7 @@ import uz.gita.spellingtest.R;
 public class QuestionData {
 
     private int id;
+    private Boolean isValid;
     private String question;
     private String variant1;
     private String variant2;
@@ -20,8 +21,9 @@ public class QuestionData {
 
     }
 
-    public QuestionData(int id, String question, String variant1, String variant2, String variant3, String variant4, String answer) {
+    public QuestionData(int id,boolean isValid, String question, String variant1, String variant2, String variant3, String variant4, String answer) {
         this.id = id;
+        this.isValid = isValid;
         this.question = question;
         this.variant1 = variant1;
         this.variant2 = variant2;
@@ -45,6 +47,8 @@ public class QuestionData {
     public String getAnswer() {
         return answer;
     }
+
+    public boolean getIsValid() { return isValid; }
 
     public String getVariant1() {
         return variant1;

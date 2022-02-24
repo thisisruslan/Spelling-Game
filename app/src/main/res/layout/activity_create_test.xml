@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_create_test"
+    android:focusableInTouchMode="true"
+    android:background="@color/myLightPurple"
+    tools:context=".ui.activities.CreateTestActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/myDarkPurple">
+
+            <ImageView
+                android:id="@+id/btn_test_create_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Test dúziw"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/pop_up_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_pop_up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/question"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Soraw"
+        app:boxBackgroundColor="@color/myLightPurple"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:textColorHint="@color/gray"
+        app:boxStrokeColor="@color/myDarkPurple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/variant1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="40"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/question"
+            android:padding="16dp"
+            android:textColor="@color/myDarkPurple"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/myDarkPurple"
+        app:layout_constraintBottom_toBottomOf="@id/variant1"
+        app:layout_constraintEnd_toStartOf="@id/variant1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintTop_toTopOf="@id/variant1" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/variant1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="variant1"
+        app:boxBackgroundColor="@color/myLightPurple"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxStrokeColor="@color/myDarkPurple"
+        app:layout_constraintBottom_toTopOf="@id/variant2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox1"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_variant1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/myDarkPurple"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/myDarkPurple"
+        app:layout_constraintBottom_toBottomOf="@id/variant2"
+        app:layout_constraintEnd_toStartOf="@id/variant2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintTop_toTopOf="@id/variant2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/variant2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="variant2"
+        app:boxBackgroundColor="@color/myLightPurple"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:textColorHint="@color/gray"
+        app:boxStrokeColor="@color/myDarkPurple"
+        app:layout_constraintBottom_toTopOf="@id/variant3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox2"
+        app:layout_constraintTop_toBottomOf="@id/variant1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_variant2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/myDarkPurple"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/myDarkPurple"
+        app:layout_constraintBottom_toBottomOf="@id/variant3"
+        app:layout_constraintEnd_toStartOf="@id/variant3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintTop_toTopOf="@id/variant3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/variant3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="variant3"
+        android:textColorHint="@color/gray"
+        app:boxBackgroundColor="@color/myLightPurple"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxStrokeColor="@color/myDarkPurple"
+        app:layout_constraintBottom_toTopOf="@id/variant4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox3"
+        app:layout_constraintTop_toBottomOf="@id/variant2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_variant3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/myDarkPurple"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/myDarkPurple"
+        app:layout_constraintBottom_toBottomOf="@id/variant4"
+        app:layout_constraintEnd_toStartOf="@id/variant4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintTop_toTopOf="@id/variant4" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/variant4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="variant4"
+        app:boxBackgroundColor="@color/myLightPurple"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:textColorHint="@color/gray"
+        app:boxStrokeColor="@color/myDarkPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox4"
+        app:layout_constraintTop_toBottomOf="@id/variant3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_variant4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/myDarkPurple"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btn_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/variant4"
+        android:background="@drawable/bg_create_test_btn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arbutus"
+            android:text="Dúziw"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:progressTint="@color/myDarkPurple"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
